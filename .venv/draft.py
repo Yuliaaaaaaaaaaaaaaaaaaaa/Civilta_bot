@@ -77,13 +77,22 @@ async def history(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     answer_q = History[i][1]
     await update.message.reply_text(History[i][0], reply_markup=reply_markup)  # Обновляем клавиатуру
 
+'''
+async def mistakes(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    s = ''
+    if wrong_answers != []:
+        for i in wrong_answers:
+            s += i[0] + i[1] + '\n'
+    else:
+        s = 'Имба, ошибок нет'
+    await update.message.reply_text(s, reply_markup=reply_markup) #Обновляем клавиатуру
+'''
+
+
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Эхо-ответ на любое текстовое сообщение, кроме команд."""
     global answer_q
-    global ques_q
     ans = answer_q
-    if ans.lower() != update.message.text.lower():
-        wrong_answers.append((ques_q, answer_q))
     await update.message.reply_text(f"Молодец!\nПравильный ответ: {ans}", reply_markup=reply_markup) #Обновляем клавиатуру
 
 
