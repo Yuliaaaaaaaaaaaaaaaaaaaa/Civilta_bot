@@ -1,7 +1,6 @@
 import logging
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import Application, MessageHandler, filters, CommandHandler, ContextTypes
-import datetime
 import random
 import sqlite3
 from telegram.helpers import escape_markdown
@@ -14,7 +13,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Токен вашего бота (замените на свой)
-BOT_TOKEN = '7606085998:AAFy_zhmnPpx2YXG_2SWO8UaXs3G9zA8be0'
+BOT_TOKEN = '7281474835:AAFzxR6JBdH1a1-ibQgIJ5Lx8hb7f21MDHk'
 IMAGE_DIRECTORY = "data"
 # Данные для бота
 global answer_q
